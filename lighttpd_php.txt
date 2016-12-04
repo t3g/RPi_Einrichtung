@@ -1,0 +1,30 @@
+sudo apt-get install lighttpd
+sudo apt-get install php5-common php5-cgi php5
+sudo lighty-enable-mod fastcgi-php
+sudo service lighttpd restart
+oder:
+sudo /etc/init.d/lighttpd force-reload (reload config)
+
+sudo groupadd www-data
+sudo adduser pi www-data
+sudo chown www-data:www-data /var/www
+sudo chmod 775 /var/www
+sudo chown www-data:www-data /var/www/html
+sudo chmod 775 /var/www/html
+sudo usermod -a -G www-data www-data
+sudo chown www-data /home/pi/i2c/i2c_vbusf_json
+
+
+sudo adduser www-data i2c
+sudo reboot
+
+alt:
+
+sudo apt-get install lighttpd php5-common php5-cgi php5 -y
+sudo nano /etc/php5/cgi/php.ini und "cgi.fix_pathinfo = 1" anfügen
+
++mysql:
+
+sudo apt-get install lighttpd php5-cgi mysql-server mysql-client phpmyadmin
+
+http://www.forum-raspberrypi.de/Thread-tutorial-lighttpd-webserver-php5-mysql-server-unter-raspbian

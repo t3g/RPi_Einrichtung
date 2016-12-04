@@ -1,0 +1,26 @@
+sudo apt-get install apache2 apache2-doc apache2-utils libapache2-mod-php5 php5 php-pear php5-xcache
+
+sudo groupadd www-data
+sudo adduser pi www-data
+sudo chown www-data:www-data /var/www
+sudo chmod 775 /var/www
+sudo chown www-data:www-data /var/www/html
+sudo chmod 775 /var/www/html
+sudo usermod -a -G www-data www-data
+sudo chown www-data /home/pi/i2c/i2c_vbusf_json
+
+
+sudo adduser www-data i2c
+sudo reboot
+
+/etc/init.d/apache2 restart
+
+
+
+evtl.
+apt-get install php5-mysql
+apt-get install mysql-server mysql-client libmysqlclient-dev
+apt-get install phpmyadmin
+
+sudo nano /etc/mysql/my.cnf
+comment out bind-adress=127.0.0.1

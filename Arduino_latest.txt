@@ -1,0 +1,5 @@
+git clone https://github.com/NicoHood/Arduino-IDE-for-Raspberry.git
+cd Arduino-IDE-for-Raspberry
+tar xvf arduino-1.6.8-rc1-arm.tar.xz
+cd arduino-1.6.8
+sh install.sh

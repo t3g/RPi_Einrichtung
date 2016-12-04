@@ -1,0 +1,18 @@
+sudo su
+
+first use:
+apt-get install dosfstools rsync
+cd /tmp
+wget -O sysmatt-rpi-tools.zip  https://github.com/sysmatt-industries/sysmatt-rpi-tools/archive/master.zip
+unzip sysmatt-rpi-tools.zip
+cd sysmatt-rpi-tools-master/
+chmod +x sysmatt.rpi.*
+mv sysmatt.rpi.* /usr/local/bin
+
+mkdir -p /home/pi/backups
+
+sysmatt.rpi.backup.gtar
+or
+sysmatt.rpi.backup.gtar  /media/2EF9-4EC0/my.pi.backup.tar.gz
+or
+sysmatt.rpi.backup.gtar /root/my.pi.backup.tar.gz

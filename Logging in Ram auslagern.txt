@@ -1,0 +1,39 @@
+Um z.B. /var/log und /var/run in den Arbeitsspeicher auszulagern, müssen folgende Einträge in der /etc/fstab hinzugefügt werden:
+-->
+
+sudo nano /etc/fstab
+
+haut no ned hin!
+
+tmpfs /var/tmp tmpfs nodev,nosuid,size=50M 0 0
+
+
+none           /var/log        tmpfs   size=5M,noatime          0 0
+none           /var/tmp        tmpfs   size=5M,noatime          0 0
+none           /tmp            tmpfs   size=5M,noatime          0 0
+
+
+none        /var/run        tmpfs   size=5M,noatime         00
+none        /var/log        tmpfs   size=5M,noatime         00
+
+none /var/run tmpfs size=5M,noatime 00
+none /var/log tmpfs size=50M,noatime 00
+
+
+tmpfs           /var/log        tmpfs   nodev,nosuid          0 0
+tmpfs           /var/tmp        tmpfs   nodev,nosuid          0 0
+tmpfs           /tmp            tmpfs   nodev,nosuid          0 0
+
+none        /var/run        tmpfs   size=50M,noatime         00
+none        /var/log        tmpfs   size=5M,noatime         00
+
+Swapping deaktivieren:
+Wheezy:
+sudo dphys-swapfile swapoff
+sudo dphys-swapfile uninstall
+sudo update-rc.d dphys-swapfile remove
+
+Jessie:
+sudo dphys-swapfile swapoff
+sudo systemctl disable dphys-swapfile
+sudo apt-get purge dphys-swapfile

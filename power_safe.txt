@@ -1,0 +1,21 @@
+sudo nano /boot/config.txt
+
+# Disable the ACT LED.
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=off
+
+# Disable the PWR LED.
+dtparam=pwr_led_trigger=none
+dtparam=pwr_led_activelow=off
+
+#Pi Zero:
+# Disable the ACT LED on the Pi Zero.
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=on
+
+#HDMI
+Switch on
+“/opt/vc/bin/tvservice -p”
+
+Switch off
+“/opt/vc/bin/tvservice -o” 

@@ -1,0 +1,4 @@
+http://smartretro.co.uk/forums/viewtopic.php?t=58
+http://www.drewkeller.com/content/reading-and-writing-disk-images-raspberry-pi
+http://softwarebakery.com/shrinking-images-on-linux
+http://sirlagz.net/2013/03/10/script-automatic-rpi-image-downsizer/

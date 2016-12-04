@@ -1,0 +1,6 @@
+sudo apt-get install i2c-tools
+sudo nano /etc/modules
+
+hinzufügen von:
+i2c-bcm2708
+i2c-dev

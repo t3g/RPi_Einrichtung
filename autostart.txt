@@ -1,0 +1,20 @@
+# im xserver fall:
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+Beispiel:
+@sudo /home/pi/./isr
+@lxterminal -e /home/pi/./isr
+@lxterminal -e /pfad/zu/einem-script.sh
+@midori
+@python mein-python-script.py
+
+# wenn mit Anmeldung:
+sudo nano /etc/profile
+# ganz unten befehl einfuegen - bsp:
+sudo python /home/pi/myscript.py
+python3 /home/pi/zeiterfassung.py
+
+# per crontab:
+sudo crontab -e  
+2
+@reboot python3 /home/pi/zeiterfassung.py

@@ -1,0 +1,18 @@
+sudo nano /boot/config.txt
+
+# HDMI auch ohne Monitor in Betrieb nehmen (optional)
+hdmi_force_hotplug=1
+# Audio über HDMI ausgeben (optional)
+hdmi_drive=2
+# DMT-Betriebsmodus aktivieren
+hdmi_group=2
+
+
+# Auflösung: 1024x768 / 60 Hz
+#hdmi_mode=16
+# Auflösung: 1280x768 / 60 Hz
+#hdmi_mode=23
+# Auflösung: 1366x768 / 60 Hz
+#hdmi_mode=81
+# Auflösung: 1920x1080 / 60 Hz (1080p)
+hdmi_mode=82

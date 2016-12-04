@@ -1,0 +1,54 @@
+sudo nano /boot/config.txt
+uncomment dtoverlay=lirc-rpi
+sudo apt-get install lirc
+
+############################################
+sudo nano /etc/modules
+add:
+lirc_rpi
+lirc_dev
+############################################
+sudo nano /etc/lirc/hardware.conf
+add:
+
+# /etc/lirc/hardware.conf
+#
+# Arguments which will be used when launching lircd
+LIRCD_ARGS=""
+
+#Don't start lircmd even if there seems to be a good config file
+#START_LIRCMD=false
+
+#Don't start irexec, even if a good config file seems to exist.
+#START_IREXEC=false
+
+#Try to load appropriate kernel modules
+LOAD_MODULES=true
+
+# Run "lircd --driver=help" for a list of supported drivers.
+DRIVER="UNCONFIGURED"
+# usually /dev/lirc0 is the correct setting for systems using udev
+DEVICE=""
+MODULES=""
+
+# Default configuration files for your hardware if any
+LIRCD_CONF=""
+LIRCMD_CONF=""
+############################################
+
+sudo /etc/init.d/lirc stop
+sudo modprobe lirc_rpi
+see signals:
+mode2 -d /dev/lirc0
+stop lirc:
+sudo /etc/init.d/lirc stop
+see all buttons:
+irrecord --list-namespace
+record Buttons to the namespace names:
+irrecord -d /dev/lirc0 ~/lircd-fernbedienung.conf
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+sudo su
+
+adduser pi i2c
+chgrp i2c /dev/i2c-1
+chmod 666 /dev/i2c-1

@@ -1,0 +1,5 @@
+sudo apt-get install lxde
+(sudo apt-get install lightdm) bereits enthalten
+sudo apt-get install xinit
+
+sudo apt-get install xutils

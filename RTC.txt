@@ -1,0 +1,31 @@
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+
+sudo nano /boot/config.txt
+uncomment: dtparam=i2c_arm=on
+add:
+
+#RTC on
+dtoverlay=i2c-rtc,ds3231
+
+sudo nano /lib/udev/hwclock-set  
+to comment out the following lines with a '#'  
+if [ -e /run/systemd/system ] ; then
+exit 0
+fi
+
+sudo reboot
+
+/* optional:
+dmesg | grep i2c  
+dmesg | grep rtc  
+i2cdetect -y 1
+*/
+
+history -c  
+history -w  
+date  
+sudo hwclock -w  
+sudo hwclock -r  
+date; sudo hwclock -r  
+sudo reboot now  

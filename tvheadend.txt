@@ -1,0 +1,40 @@
+copy tvheadend in /home/pi/tvheadend
+dann
+cd tvheadend
+
+|| oder:
+wget 192.168.1.111/tvheadend/dvb_firmware.tar.gz
+wget 192.168.1.111/tvheadend/dvbsky-firmware.tar.gz
+
+sudo cp dvb_firmware.tar.gz /lib/firmware
+sudo cp dvbsky-firmware.tar.gz /lib/firmware
+cd /lib/firmware
+sudo tar -xzf dvb_firmware.tar.gz
+sudo tar -xzf dvbsky-firmware.tar.gz
+sudo chown -R root:root /lib/firmware
+sudo dvbsky-firmware/./copy-firmware.sh
+sudo rm dvbsky-firmware.tar.gz && sudo rm dvb_firmware.tar.gz && sudo rm -r dvbsky-firmware
+sudo reboot
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+echo "deb http://dl.bintray.com/tvheadend/deb jessie release" | sudo tee -a /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get install tvheadend
+sudo reboot
+
+Anleitungen:
+https://christian-brauweiler.de/howto/live-tv-auf-raspberry-pi-streamen-mit-tvheadend-und-dvb-s
+http://www.minipctv.de/tvheadendserver/tvheadend-konfigurieren/
+
+evtl.
+"frequency": 11953500,
+"symbol_rate": 27500000,
+"fec": "3/4",
+"polarisation": "Horizontal",
+"modulation": "QPSK",
+"delivery_system": "SYS_DVBS",
+
+
+
+wget 192.168.1.111/media_build.tar
+tar -xvf media_build.tar

@@ -1,0 +1,11 @@
+erst in gparted Hauptpartition verkleinern (Linux)
+dann img mit Win32Imager erstellen (Windows)
+Rest Linux:
+fdisk -lu image.img
+--> End
+--> Unit size (512?)
+truncate --size=$[(End+1)*512] image.img
+
+bsp:
+fdisk -lu 2016-05-10-raspbian-jessie_small.img
+truncate --size=$[(7251967+1)*512] 2016-05-10-raspbian-jessie_small.img

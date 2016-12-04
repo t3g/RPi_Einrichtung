@@ -1,0 +1,5 @@
+sudo chmod +x /usr/share/doc/python3-pifacecad/examples/sysinfo.py
+sudo nano /etc/rc.local
+
+# Auto run our application
+sudo /usr/share/doc/python3-pifacecad/examples/sysinfo.py &

@@ -1,0 +1,25 @@
+sudo nano /etc/init.d/varlog
+sudo chmod +x /etc/init.d/varlog
+
+sudo nano /etc/systemd/system/varlog.service
+#########################################
+[Unit]
+Description=Start/stop tmpfs logfile saving
+DefaultDependencies=no
+After=local-fs.target
+Before=Basic.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/etc/init.d/varlog start
+ExecStop=/etc/init.d/varlog stop
+
+[Install]
+WantedBy=local-fs.target
+#########################################
+sudo /etc/init.d/varlog stop
+sudo systemctl enable varlog
+sudo reboot
+sudo systemctl status varlog
+sudo systemd-analyze plot > irgendwas.svg

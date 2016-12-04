@@ -1,0 +1,28 @@
+sudo apt-get install samba samba-common-bin -y
+sudo nano /etc/samba/smb.conf
+
+
+[pihome]
+   comment = PiHome
+   path = /home/pi
+   browseable = yes
+   writable = yes
+   guest ok = no
+   create mask = 0777
+   directory mask = 0777
+   public = no
+
+[www]
+   comment = www
+   path = /var/www
+   browseable = yes
+   writable = yes
+   guest ok = no
+   create mask = 0777
+   directory mask = 0777
+   public = no
+
+
+sudo smbpasswd -a pi
+raspberry x2
+sudo /etc/init.d/samba restart

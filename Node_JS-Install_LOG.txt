@@ -1,0 +1,65 @@
+sudo npm install -g dashing-js
+npm WARN deprecated jade@0.35.0: Jade has been renamed to pug, please install th                                                                             e latest version of pug instead of jade
+npm WARN deprecated graceful-fs@3.0.8: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+npm WARN deprecated transformers@2.1.0: Deprecated, use jstransformer
+npm WARN engine hawk@0.10.2: wanted: {"node":"0.8.x"} (current: {"node":"0.10.29","npm":"1.4.21"})
+npm WARN engine sntp@0.1.4: wanted: {"node":"0.8.x"} (current: {"node":"0.10.29","npm":"1.4.21"})
+npm WARN engine cryptiles@0.1.3: wanted: {"node":"0.8.x"} (current: {"node":"0.10.29","npm":"1.4.21"})
+npm WARN engine boom@0.3.8: wanted: {"node":"0.8.x"} (current: {"node":"0.10.29","npm":"1.4.21"})
+npm WARN engine hoek@0.7.6: wanted: {"node":"0.8.x"} (current: {"node":"0.10.29","npm":"1.4.21"})
+npm WARN excluding symbolic link test/fixtures/app/views/.#application.js.coffee.erb -> sam@pursuit.41266
+npm WARN deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+npm WARN deprecated graceful-fs@2.0.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+\
+> node-sass@0.7.0 install /usr/local/lib/node_modules/dashing-js/node_modules/node-sass
+> node build.js
+
+make: Entering directory '/usr/local/lib/node_modules/dashing-js/node_modules/node-sass/build'
+  CXX(target) Release/obj.target/binding/binding.o
+  CXX(target) Release/obj.target/binding/sass_context_wrapper.o
+  CXX(target) Release/obj.target/binding/libsass/ast.o
+  CXX(target) Release/obj.target/binding/libsass/bind.o
+  CXX(target) Release/obj.target/binding/libsass/constants.o
+  CXX(target) Release/obj.target/binding/libsass/context.o
+  CXX(target) Release/obj.target/binding/libsass/contextualize.o
+  CXX(target) Release/obj.target/binding/libsass/copy_c_str.o
+  CXX(target) Release/obj.target/binding/libsass/error_handling.o
+  CXX(target) Release/obj.target/binding/libsass/eval.o
+  CXX(target) Release/obj.target/binding/libsass/expand.o
+  CXX(target) Release/obj.target/binding/libsass/extend.o
+  CXX(target) Release/obj.target/binding/libsass/file.o
+  CXX(target) Release/obj.target/binding/libsass/functions.o
+  CXX(target) Release/obj.target/binding/libsass/inspect.o
+  CXX(target) Release/obj.target/binding/libsass/output_compressed.o
+  CXX(target) Release/obj.target/binding/libsass/output_nested.o
+  CXX(target) Release/obj.target/binding/libsass/parser.o
+  CXX(target) Release/obj.target/binding/libsass/prelexer.o
+  CXX(target) Release/obj.target/binding/libsass/sass.o
+  CXX(target) Release/obj.target/binding/libsass/sass_interface.o
+  CXX(target) Release/obj.target/binding/libsass/to_c.o
+  CXX(target) Release/obj.target/binding/libsass/to_string.o
+  CXX(target) Release/obj.target/binding/libsass/units.o
+  SOLINK_MODULE(target) Release/obj.target/binding.node
+  SOLINK_MODULE(target) Release/obj.target/binding.node: Finished
+  COPY Release/binding.node
+make: Leaving directory '/usr/local/lib/node_modules/dashing-js/node_modules/node-sass/build'
+Installed in `/usr/local/lib/node_modules/dashing-js/node_modules/node-sass/bin/linux-arm-v8-3.14/binding.node`
+/usr/local/bin/dashing-js -> /usr/local/lib/node_modules/dashing-js/bin/dashing-js
+dashing-js@0.1.5 /usr/local/lib/node_modules/dashing-js
++-- express-ejs-layouts@0.3.1
++-- commander@2.1.0
++-- consolidate@0.10.0
++-- async@0.2.10
++-- walker@1.0.7 (makeerror@1.0.11)
++-- fs-extra@0.8.1 (jsonfile@1.1.1, rimraf@2.2.8, ncp@0.4.2, mkdirp@0.3.5)
++-- ejs@0.8.8
++-- node-schedule@0.1.16 (long-timeout@0.0.2, cron-parser@0.3.6)
++-- coffee-script@1.6.3
++-- request@2.30.0 (aws-sign2@0.5.0, forever-agent@0.5.2, qs@0.6.6, tunnel-agent@0.3.0, oauth-sign@0.3.0, json-stringify-safe@5.0.1, mime@1.2.11, node-uuid@1.4.7, form-data@0.1.4, http-signature@0.10.1, tough-cookie@0.9.15, hawk@1.0.0)
++-- unzip@0.1.11 (setimmediate@1.0.4, pullstream@0.4.1, match-stream@0.0.2, readable-stream@1.0.34, binary@0.3.0, fstream@0.1.31)
++-- prompt@0.2.14 (revalidator@0.1.8, pkginfo@0.4.0, read@1.0.7, winston@0.8.3, utile@0.2.1)
++-- winston@0.7.3 (cycle@1.0.3, stack-trace@0.0.9, eyes@0.1.8, colors@0.6.2, pkginfo@0.3.1, request@2.16.6)
++-- jade@0.35.0 (character-parser@1.2.0, commander@2.0.0, mkdirp@0.3.5, transformers@2.1.0, constantinople@1.0.2, monocle@1.1.50, with@1.1.1)
++-- mincer@0.5.13 (shellwords@0.1.0, fs-tools@0.2.11, mimoza@0.3.0, hike@0.1.4, argparse@0.1.16, lodash@2.4.2)
++-- express@3.4.8 (methods@0.1.0, merge-descriptors@0.0.1, cookie-signature@1.0.1, range-parser@0.0.4, debug@0.8.1, fresh@0.2.0, buffer-crc32@0.2.1, cookie@0.1.0, mkdirp@0.3.5, commander@1.3.2, send@0.1.4, connect@2.12.0)
++-- node-sass@0.7.0 (node-watch@0.3.5, colors@0.6.0-1, mkdirp@0.3.5, optimist@0.6.1, mocha@1.13.0)

@@ -1,0 +1,4 @@
+sudo apt-get install mariadb-server mariadb-client libmysqlclient-dev
+
+sudo nano /etc/mysql/my.cnf
+comment out bind-adress=127.0.0.1

@@ -1,0 +1,11 @@
+###nightly###
+wget -O arduino-nightly-linuxarm.tar.xz https://www.arduino.cc/download.php?f=/arduino-nightly-linuxarm.tar.xz
+tar -xvf arduino-nightly-linuxarm.tar.xz
+cd arduino-nightly
+###stable###
+wget -O arduino-1.6.9-linuxarm.tar.xz https://www.arduino.cc/download.php?f=/arduino-1.6.9-linuxarm.tar.xz
+tar -xvf arduino-1.6.9-linuxarm.tar.xz
+cd arduino-1.6.9
+
+sudo ./install.sh
+./install.sh

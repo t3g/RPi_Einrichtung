@@ -1,0 +1,49 @@
+lsblk
+###################################
+sudo mkdir /media/INTENSO
+sudo mount /dev/sdb1 /media/INTENSO
+###################################
+
+erst in gparted partition verkleinern!
+
+img erstellen:
+sudo dd if=/dev/sdX | pv | sudo dd of=~/raspberry-pi.img
+sudo su 
+dd if=/dev/sdX | pv | dd of=/pfad/zur/datei
+auf kleinere (mit 1234 Größe in MB - Blöcke/1024):
+sudo dd if=/dev/sdX bs=1M count=1234  | pv | gzip > /pfad/zur/datei.img.gz
+
+img wiederherstellen:
+sudo dd if=~/raspberry-pi.img | pv | sudo dd of=/dev/sdd
+
+Bsp:
+Backup
+sudo dd if=/dev/sda  bs=1M count=3800 | pv | sudo dd of=/dev/sdb
+sudo dd if=/dev/sda  bs=1M count=3100 | pv | sudo dd of=/media/INTENSO/2016-05-10-raspbian-jessie_rasppi_VBUS.img
+sudo dd if=/dev/sda  bs=1M count=3100 | pv | sudo dd of=~/2016-05-10-raspbian-jessie_rasppi_VBUS.img
+sudo dd if=/dev/sda  bs=1M count=3800 | pv | sudo dd of=/media/INTENSO/2016-05-27-raspbian-jessie_Arduino-DEV.img
+
+Restore
+sudo dd if=~/raspberry-pi.img | pv | sudo dd of=/dev/sdd
+
+
+
+
+
+Um ein Backup von Raspbian oder Raspbmc zu erstellen, können Sie einfach ein Image von Ihrer SD-Karte erstellen. Dazu kann unter Linux, wie bereits in der Anleitung Datenträger sichern und wiederherstellen beschrieben, das Kommandozeilentool dd verwendet werden. Erstellen Sie mit dd ein Abbild der SD-Karte, benötigt das erstellte Image genau so viel Speicherplatz wie die SD-Karte zur Verfügung stellt. Bei einer 16GB SD-Karte wird folglich auch ein Image mit 16GB erstellt. Um Speicherplatz zu sparen, kann man das erstellte Image zum Beispiel mit gzip komprimieren. Wer das Image noch kompakter machen will, sollte die folgenden Befehle genauer betrachten.
+
+Mit dem folgenden Einzeiler wird die zweite Partition der SD-Karte (/dev/mmcblk0p2) in das Verzeichnis /mnt eingehängt. Danach wird auf diesem Datenträger die Datei /mnt/zero.file erstellt, welche nur Nullen enthält und den gesamten noch verfügbaren Speicherplatz belegt. Diese Datei wird im Anschluss wieder gelöscht und dient nur dazu den freien Speicherbereich mit Nullen zu überschreiben welche sich besser komprimieren lassen. Nach dem Löschen der Datei wird die Partition /dev/mmcblk0p2 ausgehängt und ein Image der SD-Karte erstellt. Die Ausgabe von dd wird an gzip übergeben und komprimiert in der Abbilddatei image.dump.gz gespeichert.
+
+$ sudo mount /dev/mmcblk0p2 /mnt && sudo dd if=/dev/zero of=/mnt/zero.file; sudo rm -f /mnt/zero.file && sudo umount /mnt && sudo dd if=/dev/mmcblk0 | gzip > image.dump.gz
+
+Da dd keinen Status anzeigt, kann man diesen Befehl noch um pv erweitern damit Sie eine Statusanzeige erhalten.
+
+$ sudo mount /dev/mmcblk0p2 /mnt && sudo dd if=/dev/zero | pv | sudo dd of=/mnt/zero.file; sudo rm -f /mnt/zero.file && sudo umount /mnt && sudo dd if=/dev/mmcblk0 | pv | gzip > image.dump.gz
+
+Wenn Sie ein Abbild wieder auf die SD-Karte schreiben wollen, können Sie den folgenden Befehl verwenden. Hierbei wird das Image image.dump.gz mit gzip entpackt und anschließend mit dd auf die SD-Karte /dev/mmcblk0 geschrieben.
+
+$ gzip -dc image.dump.gz | sudo dd of=/dev/mmcblk0
+
+Auch hier kann man mit pv für eine Statusausgabe sorgen.
+
+$ gzip -dc image.dump.gz | pv | sudo dd of=/dev/mmcblk0

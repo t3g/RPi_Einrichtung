@@ -1,0 +1,31 @@
+sudo su
+dphys-swapfile swapoff
+systemctl disable dphys-swapfile
+apt-get remove --purge dphys-swapfile; apt-get install busybox-syslogd; dpkg --purge rsyslog
+
+nano /boot/cmdline.txt
+add:
+fastboot noswap
+
+rm -rf /var/lib/dhcp/ /var/run /var/spool /var/lock
+ln -s /tmp /var/lib/dhcp; ln -s /tmp /var/run; ln -s /tmp /var/spool; ln -s /tmp /var/lock
+insserv -r bootlogs; insserv -r console-setup
+
+nano /etc/fstab
+add:
+# For Debian Jessie 
+tmpfs           /tmp            tmpfs   nosuid,nodev         0       0
+tmpfs           /var/log        tmpfs   nosuid,nodev         0       0
+tmpfs           /var/tmp        tmpfs   nosuid,nodev         0       0
+
+add: ro
+/dev/mmcblk0p1  /boot           vfat    defaults,ro          0       2
+
+um alles in ro state zu bringen:
+kivy log deaktivieren!
+"nano /boot/cmdline.txt" und add "ro" am ende vorsicht: boot ist bereits ro!
+und "ro" bei
+/dev/mmcblk0p2  /               ext4    defaults,noatime,ro  0       1
+
+Test:
+mount | grep /dev/mmc

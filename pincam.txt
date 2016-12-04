@@ -1,0 +1,5 @@
+sudo apt-get install python-qt4
+sudo git clone https://github.com/pinqin/pinqam.git
+cd pinqam
+sudo chmod 0755 pinqam_prog.py
+./pinqam_prog.py

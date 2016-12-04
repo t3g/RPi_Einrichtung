@@ -1,0 +1,19 @@
+new:
+copy wpa_supplicant.conf 2 boot
+
+
+sudo nano /etc/network/interfaces
+
+"auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf"
+
+ersetzen durch:
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-ap-scan 1
+wpa-scan-ssid 1
+wpa-ssid "LevelOne"
+wpa-psk "password"

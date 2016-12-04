@@ -1,0 +1,10 @@
+sudo apt-get update && sudo apt-get upgrade
+sudo sed -i /deb/s/wheezy/jessie/g /etc/apt/sources.list
+%sudo apt-get update && sudo apt-get upgrade -qq && sudo apt-get dist-upgrade -qq
+sudo apt-get update && sudo apt-get upgrade 
+sudo apt-get dist-upgrade
+
+sudo apt-get install sysvinit-core systemd-shim systemd-sysv-
+sudo apt-get remove --purge systemd systemd-sysv
+sudo apt-get autoclean
+sudo reboot

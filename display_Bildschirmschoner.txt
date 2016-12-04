@@ -1,0 +1,18 @@
+# in der Datei /etc/lightdm/lightdm.conf
+...
+[SeatDefaults]
+xserver-command=X -s 0 -dpms # off (Zeit unendlich)
+xserver-command=X -s 1 -dpms # 1 Minute
+...
+
+einfügen
+
+
+Can I control the backlight?
+
+With the latest software you can turn the backlight on and off with the following commands:
+
+On:
+echo 0 > /sys/class/backlight/rpi_backlight/bl_power
+Off:
+echo 1 > /sys/class/backlight/rpi_backlight/bl_power

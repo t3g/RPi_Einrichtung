@@ -1,0 +1,2 @@
+http://raspberry.tips/raspberrypi-tutorials/visualisierung-von-temperaturdaten-mit-emoncms/
+https://github.com/emoncms/emoncms/blob/master/docs/LinuxInstall.md

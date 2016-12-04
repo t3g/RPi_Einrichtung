@@ -1,0 +1,5 @@
+remove partition 1 und 2:
+sudo parted /dev/sda rm 1
+sudo parted /dev/sda rm 2
+create new (single) partition: (not really)
+sudo parted /dev/sda mkpart primary fat32 0 100%

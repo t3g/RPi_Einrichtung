@@ -1,0 +1,7 @@
+curl -L -o VNC.tar.gz https://www.realvnc.com/download/binary/latest/debian/arm/
+tar xvf VNC.tar.gz
+ls -l
+sudo dpkg -i <VNC-Server-package-name>.deb [<VNC-Viewer-package-name>.deb]
+
+sudo raspi-config
+#activate VNC

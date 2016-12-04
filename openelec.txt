@@ -1,0 +1,4 @@
+lcd_rotate=2
+max_usb_current=1
+dtoverlay=lirc-rpi
+device_tree_overlay=lirc-rpi

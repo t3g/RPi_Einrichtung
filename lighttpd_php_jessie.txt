@@ -1,0 +1,22 @@
+sudo apt-get install lighttpd
+sudo apt-get install php5-cgi php5-dev php5
+sudo lighty-enable-mod fastcgi
+sudo lighty-enable-mod fastcgi-php
+
+sudo chown -R www-data:www-data /var/www
+sudo chmod 775 -R /var/www
+sudo usermod -a -G www-data pi
+sudo usermod -a -G www-data www-data
+sudo chown www-data /home/pi/i2c/i2c_vbusf_json
+
+set server.document-root = "/var/www" in:
+sudo nano /etc/lighttpd/lighttpd.conf
+
+set display_errors = On in:
+sudo nano /etc/php5/cgi/php.ini
+
+sudo /etc/init.d/lighttpd force-reload (reload config)
+oder:
+sudo service lighttpd force-reload
+oder:
+sudo service lighttpd restart

@@ -1,0 +1,2 @@
+sudo apt-get install pi-bluetooth bluez bluez-firmware blueman -y
+sudo reboot

@@ -1,0 +1,5 @@
+sudo apt-get remove --purge wolfram-engine penguinspuzzle scratch dillo squeak-vm squeak-plugins-scratch sonic-pi python-pygame  epiphany-browser epiphany-browser-data minecraft-pi python-minecraftpi python3-minecraftpi claws-mail claws-mail-i18n libreoffice-* -y
+
+rm -rf /home/pi/python_games
+
+sudo apt-get autoremove -y && sudo apt-get clean

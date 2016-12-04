@@ -1,0 +1,8 @@
+# smb.conf und wpa_supplicant in boot!!!
+# vorher kopieren
+sudo su
+wget -q http://192.168.1.111/raspbian_jessie_setup.sh -O raspbian_jessie_setup.sh && chmod +x raspbian_jessie_setup.sh && sudo ./raspbian_jessie_setup.sh
+
+# raspberry x2
+
+wget -q http://192.168.1.111/raspbian_jessie_setup_light.sh -O raspbian_jessie_setup_light.sh && chmod +x raspbian_jessie_setup_light.sh && sudo ./raspbian_jessie_setup_light.sh

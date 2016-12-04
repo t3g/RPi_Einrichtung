@@ -1,0 +1,3 @@
+df -h
+umount /dev/sda5 (?)
+sysmatt.rpi.restore.sd.card /dev/sda /home/pi/backups/(?)
